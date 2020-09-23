@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VueJs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <h1 class="text-center">VUE JS</h1>
+
+    <div id="app">
+        <input type="text" id="input" v-model="message">
+
+        <p class="text-center text-green">
+            El valor del input es: {{ message }}
+        </p>
+    </div>
+
+    <!-- VUEJS Library -->
+    <script src="../js/vue.js"></script>
+
+    <!-- Script -->
+    <script>
+        new Vue({
+            data: {
+                message: 'Hello World'
+            },
+            el: '#app'
+        });
+
+        /* ############## Long Form ############## */
+        // let data = {
+        //     message: 'Hello World'
+        // };
+
+        // let input = document.querySelector('#input');
+
+        // input.value = data.message;
+    </script>
+</body>
+</html>

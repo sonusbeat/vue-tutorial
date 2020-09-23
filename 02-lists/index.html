@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VueJs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <h1 class="text-center">VUE JS</h1>
+
+    <div id="app">
+        <ul>
+            <!-- <li v-for="item in languages">
+                <span class="text-blue">
+                    {{ item }}
+                </span>
+            </li> -->
+
+            <li v-for="item in languages">
+                <span class="text-blue" v-text="item"></span>
+            </li>
+        </ul>
+
+        <input type="text" id="input" class="input2">
+        <button id="submit" class="submit">Add</button>
+    </div>
+
+    <!-- VUEJS Library -->
+    <script src="../js/vue.js"></script>
+
+    <!-- Script -->
+    <script>
+        let app = new Vue({
+            data: {
+                languages: ['Javascript', 'PHP', 'Python']
+            },
+            el: '#app',
+
+            mounted() {
+                let submit = document.querySelector('#submit');
+
+                submit.addEventListener('click', () => {
+                    let item = document.querySelector('#input');
+
+                    app.languages.push(item.value);
+
+                    item.value = '';
+                });
+            }
+        });
+    </script>
+</body>
+</html>

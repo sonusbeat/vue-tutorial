@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VueJs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <h1 class="text-center">VUE JS</h1>
+
+    <div id="app">
+        <ul>
+            <li v-for="language in languages">
+                <span class="text-blue" v-text="language"></span>
+            </li>
+        </ul>
+
+        <input type="text" class="input2" v-model="newLanguage">
+
+        <button class="submit" @click="addLanguage">Add</button>
+    </div>
+
+    <!-- VUEJS Library -->
+    <script src="../js/vue.js"></script>
+
+    <!-- Script -->
+    <script>
+        let app = new Vue({
+            data: {
+                languages: ['Javascript', 'PHP', 'Python'],
+                newLanguage: ''
+            },
+
+            el: '#app',
+
+            methods: {
+                addLanguage() {
+                    this.languages.push(this.newLanguage);
+                    this.newLanguage = '';
+                }
+            }
+        });
+    </script>
+</body>
+</html>

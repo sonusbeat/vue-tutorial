@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VueJs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <h1 class="text-center">VUE JS</h1>
+
+    <div id="app">
+        <input type="text" :class="input">
+        <button :class="{ 'is-loading': isLoading }" @click="toggleClass">Agregar</button>
+    </div>
+
+    <!-- VUEJS Library -->
+    <script src="../js/vue.js"></script>
+
+    <!-- Script -->
+    <script>
+        let app = new Vue({
+            data: {
+                title: "Este título viene de data",
+                input: 'input2',
+                submit: 'submit dark-button',
+                isLoading: false
+            },
+
+            el: '#app',
+
+            methods: {
+                toggleClass() {
+                    this.isLoading = true;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VueJs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/bulma.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <h1 class="text-center">VUE JS</h1>
+
+    <div id="app">
+        <modal>
+            <template slot="header">This is the header</template>
+
+            <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur, nihil. Pariatur, quo, nemo aliquam rerum saepe explicabo optio distinctio at architecto eligendi, alias atque. Dicta voluptatem aut enim quos fugiat</div>
+
+            <template slot="footer">
+                <button class="button is-success">Save</button>
+                <button class="button">Cancel</button>
+            </template>
+        </modal>
+    </div>
+
+    <!-- VUEJS Library -->
+    <script src="../js/vue.js"></script>
+
+    <!-- Script -->
+    <script src="js/app.js"></script>
+</body>
+</html>

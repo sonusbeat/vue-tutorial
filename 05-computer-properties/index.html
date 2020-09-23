@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VueJs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <h1 class="text-center">VUE JS</h1>
+
+    <div id="app">
+        <p class="text-center text-green">
+            {{ reverseMessage }}
+        </p>
+
+        <h2 class="ml-2">Completed Tasks</h2>
+
+        <ul>
+            <li v-for="task of completeTasks">
+                <span class="text-green">{{ task.description }}</span>
+            </li>
+        </ul>
+
+        <h2 class="ml-2">Incompleted Tasks</h2>
+
+        <ul>
+            <li v-for="task of incompleteTasks">
+                <span class="text-red">{{ task.description }}</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- VUEJS Library -->
+    <script src="../js/vue.js"></script>
+
+    <!-- Script -->
+    <script>
+        let app = new Vue({
+            el: '#app',
+
+            data: {
+                message: 'Hello World',
+
+                tasks: [
+                    { description: 'Go to the store', completed: true },
+                    { description: 'Go to the Laundry', completed: false },
+                    { description: 'Go to work', completed: true },
+                    { description: 'Go to school', completed: false },
+                    { description: 'Clean room', completed: true },
+                ]
+            },
+
+            computed: {
+                reverseMessage() {
+                    return this.message.split('').reverse().join('');
+                },
+
+                completeTasks() {
+                    return this.tasks.filter(task => task.completed);
+                },
+
+                incompleteTasks() {
+                    return this.tasks.filter(task => !task.completed);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
